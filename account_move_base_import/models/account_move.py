@@ -262,9 +262,9 @@ class AccountMoveLine(models.Model):
         """Return writeable by SQL columns"""
         model_cols = self._fields
         avail = [
-            k for k, col in model_cols.iteritems() if not hasattr(col, '_fnct')
+            k for k, col in model_cols.items() if not hasattr(col, '_fnct')
         ]
-        keys = [k for k in move_store[0].keys() if k in avail]
+        keys = [k for k in list(move_store[0].keys()) if k in avail]
         keys.sort()
         return keys
 
@@ -273,7 +273,7 @@ class AccountMoveLine(models.Model):
         Return a copy of statement
         """
         move_copy = move
-        for k, col in move_copy.iteritems():
+        for k, col in move_copy.items():
             if k in cols:
                 move_copy[k] = self._fields[k].convert_to_column(col, None)
         return move_copy
@@ -392,9 +392,9 @@ class AccountMove(models.Model):
                     res = line._get_line_values_from_rules(rules)
                     if res:
                         compl_lines += 1
-                except ErrorTooManyPartner, exc:
+                except ErrorTooManyPartner as exc:
                     msg_lines.append(repr(exc))
-                except Exception, exc:
+                except Exception as exc:
                     msg_lines.append(repr(exc))
                     error_type, error_value, trbk = sys.exc_info()
                     st = "Error: %s\nDescription: %s\nTraceback:" % (
@@ -415,6 +415,6 @@ class AccountMove(models.Model):
                     # commiting here adds a nice perfo boost
                     if not compl_lines % 500:
                         self.env.cr.commit()
-            msg = u'\n'.join(msg_lines)
+            msg = '\n'.join(msg_lines)
             self.write_completion_log(msg, compl_lines)
         return True

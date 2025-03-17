@@ -63,43 +63,43 @@ class TestRuleRounding(AccountOperationTestCase):
         """-0.5 => rule round 1"""
         statement_line, move_line = self.prepare_statement(-0.5)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_round_1)
+        self.assertEqual(rule, self.rule_round_1)
 
     def test_rule_round_1_limit(self):
         """-1 => rule round 1"""
         statement_line, move_line = self.prepare_statement(-1)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_round_1)
+        self.assertEqual(rule, self.rule_round_1)
 
     def test_rule_round_1_near_limit(self):
         """-1.0001 => rule round 1"""
         statement_line, move_line = self.prepare_statement(-1.0001)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_round_1)
+        self.assertEqual(rule, self.rule_round_1)
 
     def test_rule_round_2(self):
         """-1.01 => rule round 2"""
         statement_line, move_line = self.prepare_statement(-1.01)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_round_2)
+        self.assertEqual(rule, self.rule_round_2)
 
     def test_rule_round_2_limit(self):
         """-2 => rule round 2"""
         statement_line, move_line = self.prepare_statement(-2)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_round_2)
+        self.assertEqual(rule, self.rule_round_2)
 
     def test_rule_round_3(self):
         """+1.5 => rule round 3"""
         statement_line, move_line = self.prepare_statement(1.5)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_round_3)
+        self.assertEqual(rule, self.rule_round_3)
 
     def test_rule_round_3_limit(self):
         """+2 => rule round 3"""
         statement_line, move_line = self.prepare_statement(2)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_round_3)
+        self.assertEqual(rule, self.rule_round_3)
 
     def test_rule_no_round_below(self):
         """-3 => no rule"""
@@ -130,7 +130,7 @@ class TestRuleRounding(AccountOperationTestCase):
         statement_line, move_line = self.prepare_statement(-0.5)
         ops = self.rule_obj.operations_for_reconciliation(statement_line.id,
                                                           move_line.ids)
-        self.assertEquals(ops, self.operation_round_1)
+        self.assertEqual(ops, self.operation_round_1)
 
     def test_multicurrency_lines(self):
         """No rounding rules on multi-currency lines"""

@@ -92,7 +92,7 @@ class test_regex_account_completion(common.TransactionCase):
         statement_obj.button_auto_completion()
         statement_line1 = self.st_line_obj.browse(
             self.cr, self.uid, self.statement_line1_id)
-        self.assertEquals(self.account_id, statement_line1.account_id.id,
+        self.assertEqual(self.account_id, statement_line1.account_id.id,
                           "The account should be the account of the completion"
                           )
         statement_line2 = self.st_line_obj.browse(

@@ -426,12 +426,12 @@ class AccountBankStatement(orm.Model):
                     msg = "Line ID %s with ref %s had following error: %s" % (
                         st_line.id, st_line.ref, exc.value)
                     errors_stack.append(msg)
-                except Exception, exc:
+                except Exception as exc:
                     msg = "Line ID %s with ref %s had following error: %s" % (
                         st_line.id, st_line.ref, str(exc))
                     errors_stack.append(msg)
             if errors_stack:
-                msg = u"\n".join(errors_stack)
+                msg = "\n".join(errors_stack)
                 raise orm.except_orm(_('Error'), msg)
             self.write(cr, uid, [st.id],
                        {'name': st_number,

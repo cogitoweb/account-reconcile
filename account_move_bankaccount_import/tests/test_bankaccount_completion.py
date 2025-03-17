@@ -76,7 +76,7 @@ class BankAccountCompletion(common.TransactionCase):
                     self.move_line.partner_id,
                     'Partner_id must be blank before completion')
                 self.move.button_auto_completion()
-                self.assertEquals(
+                self.assertEqual(
                     self.partner, self.move_line.partner_id,
                     "Missing expected partner id after completion")
 

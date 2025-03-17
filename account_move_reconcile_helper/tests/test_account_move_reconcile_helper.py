@@ -75,7 +75,7 @@ class TestAccountMoveReconcileHelper(TransactionCase):
         lines.reconcile()
 
         for line in lines:
-            self.assertEquals(line.reconcile_line_ids, lines)
+            self.assertEqual(line.reconcile_line_ids, lines)
 
     def test_02_full_reconcile(self):
         base_move = self.create_account_move(
@@ -94,7 +94,7 @@ class TestAccountMoveReconcileHelper(TransactionCase):
         lines.reconcile()
 
         for line in lines:
-            self.assertEquals(line.reconcile_line_ids, lines)
-            self.assertEquals(
+            self.assertEqual(line.reconcile_line_ids, lines)
+            self.assertEqual(
                 line.full_reconcile_id.reconciled_line_ids,
                 line.reconcile_line_ids)

@@ -99,7 +99,7 @@ class TestRuleCurrency(AccountOperationTestCase):
             move_line_currency=self.aed,
             amount_currency_difference=0)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_currency_1)
+        self.assertEqual(rule, self.rule_currency_1)
 
     def test_currency_rule_2(self):
         """Rule 2 is found with -2 AED"""
@@ -109,7 +109,7 @@ class TestRuleCurrency(AccountOperationTestCase):
             move_line_currency=self.aed,
             amount_currency_difference=0)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_currency_2)
+        self.assertEqual(rule, self.rule_currency_2)
 
     def test_currency_rule_3(self):
         """Rule 3 is found with -2 AOA"""
@@ -119,7 +119,7 @@ class TestRuleCurrency(AccountOperationTestCase):
             move_line_currency=self.aoa,
             amount_currency_difference=0)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_currency_3)
+        self.assertEqual(rule, self.rule_currency_3)
 
     def test_currency_rule_not_in_bounds(self):
         """No rule is found with -3 AOA"""
@@ -149,4 +149,4 @@ class TestRuleCurrency(AccountOperationTestCase):
             move_line_currency=self.aed,
             amount_currency_difference=-0.001)
         rule = self.rule_obj.find_first_rule(statement_line, [move_line])
-        self.assertEquals(rule, self.rule_currency_1)
+        self.assertEqual(rule, self.rule_currency_1)

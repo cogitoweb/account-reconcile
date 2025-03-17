@@ -49,7 +49,7 @@ class FileParser(AccountMoveImportParser):
             raise UserError(
                 _('Invalid file type %s. Please use csv, xls or xlsx') % ftype)
         self.conversion_dict = extra_fields
-        self.keys_to_validate = self.conversion_dict.keys()
+        self.keys_to_validate = list(self.conversion_dict.keys())
         self.fieldnames = header
         self._datemode = 0  # used only for xls documents,
         # 0 means Windows mode (1900 based dates).
@@ -84,7 +84,7 @@ class FileParser(AccountMoveImportParser):
         separately (in the field: fieldnames).
         """
         if self.fieldnames is None:
-            parsed_cols = self.result_row_list[0].keys()
+            parsed_cols = list(self.result_row_list[0].keys())
             for col in self.keys_to_validate:
                 if col not in parsed_cols:
                     raise UserError(_('Column %s not present in file') % col)
@@ -118,7 +118,7 @@ class FileParser(AccountMoveImportParser):
             header = sheet.row_values(0)
             res = []
             for rownum in range(1, sheet.nrows):
-                res.append(dict(zip(header, sheet.row_values(rownum))))
+                res.append(dict(list(zip(header, sheet.row_values(rownum)))))
         return res
 
     def _from_csv(self, result_set, conversion_rules):

@@ -330,7 +330,7 @@ class AccountJournal(models.Model):
         if not result_row_list:
             raise UserError(_("Nothing to import: "
                               "The file is empty"))
-        parsed_cols = parser.get_move_line_vals(result_row_list[0]).keys()
+        parsed_cols = list(parser.get_move_line_vals(result_row_list[0]).keys())
         for col in parsed_cols:
             if col not in move_line_obj._fields:
                 raise UserError(

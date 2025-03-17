@@ -82,13 +82,13 @@ class BaseCompletion(common.TransactionCase):
                 "Partner_id must be blank before completion")
             self.move.button_auto_completion()
             if case.should_match:
-                self.assertEquals(
+                self.assertEqual(
                     self.partner, self.move_line.partner_id,
                     "Missing expected partner id after completion "
                     "(partner_name: %s, line_name: %s)" %
                     (case.partner_name, case.line_label))
             else:
-                self.assertNotEquals(
+                self.assertNotEqual(
                     self.partner, self.move_line.partner_id,
                     "Partner id should be empty after completion "
                     "(partner_name: %s, line_name: %s)"

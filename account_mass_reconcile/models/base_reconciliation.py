@@ -7,6 +7,7 @@
 from odoo import _, models, api, fields
 from odoo.tools.safe_eval import safe_eval
 from operator import itemgetter
+from functools import reduce
 
 
 class MassReconcileBase(models.AbstractModel):
@@ -105,7 +106,7 @@ class MassReconcileBase(models.AbstractModel):
             lambda line, memo:
             dict((key, value + memo[key])
                  for key, value
-                 in line.iteritems()
+                 in line.items()
                  if key in keys), lines)
         debit, credit = sums['debit'], sums['credit']
         writeoff_amount = round(debit - credit, precision)
