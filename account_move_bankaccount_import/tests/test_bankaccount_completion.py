@@ -2,9 +2,9 @@
 # © 2013 ACSONE SA/NV
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-from openerp.tests import common
-from openerp import fields, tools
-from openerp.modules import get_module_resource
+from odoo.tests import common
+from odoo import fields, tools
+from odoo.modules import get_module_resource
 
 ACC_NUMBER = " BE38 7330 4038 5372 "
 

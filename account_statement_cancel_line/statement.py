@@ -20,7 +20,7 @@
 ###############################################################################
 """Account Statement Cancel Line."""
 
-from openerp.osv import orm
+from odoo.osv import orm
 
 
 class Statement(orm.Model):

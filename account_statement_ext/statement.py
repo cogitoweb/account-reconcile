@@ -19,8 +19,8 @@
 #
 ##############################################################################
 import openerp.addons.account.account_bank_statement as stat_mod
-from openerp.osv import fields, orm, osv
-from openerp.tools.translate import _
+from odoo.osv import fields, orm, osv
+from odoo.tools.translate import _
 
 
 # Monkey patch to fix bad write implementation...

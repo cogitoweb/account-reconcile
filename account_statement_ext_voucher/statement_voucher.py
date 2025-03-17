@@ -19,7 +19,7 @@
 #
 ##############################################################################
 
-from openerp.osv.orm import Model
+from odoo.osv.orm import Model
 
 
 class AccountVoucher(Model):

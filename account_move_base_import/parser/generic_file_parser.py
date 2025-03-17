@@ -6,10 +6,10 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 import datetime
 from .file_parser import FileParser
-from openerp.addons.account_move_base_import.parser.file_parser import (
+from odoo.addons.account_move_base_import.parser.file_parser import (
     float_or_zero
 )
-from openerp.tools import ustr
+from odoo.tools import ustr
 
 
 class GenericFileParser(FileParser):

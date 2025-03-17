@@ -20,10 +20,10 @@
 #
 ###############################################################################
 
-from openerp.osv import fields, orm
+from odoo.osv import fields, orm
 from collections import defaultdict
-from openerp.tools.translate import _
-from openerp.addons.account_statement_base_completion.statement import \
+from odoo.tools.translate import _
+from odoo.addons.account_statement_base_completion.statement import \
     ErrorTooManyPartner
 
 

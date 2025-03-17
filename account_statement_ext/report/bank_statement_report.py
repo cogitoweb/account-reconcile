@@ -18,11 +18,11 @@
 #
 ##############################################################################
 
-from openerp.report import report_sxw
-from openerp.tools.translate import _
-from openerp import pooler
+from odoo.report import report_sxw
+from odoo.tools.translate import _
+from odoo import pooler
 from datetime import datetime
-from openerp.addons.report_webkit import webkit_report
+from odoo.addons.report_webkit import webkit_report
 
 
 class BankStatementWebkit(report_sxw.rml_parse):

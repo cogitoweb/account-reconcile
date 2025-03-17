@@ -20,7 +20,7 @@
 ###############################################################################
 """Wizard to Cancel a Statement Line."""
 
-from openerp.osv import orm
+from odoo.osv import orm
 
 
 class wizard_cancel_statement_line(orm.TransientModel):

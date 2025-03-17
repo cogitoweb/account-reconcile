@@ -18,10 +18,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-from openerp.addons.point_of_sale.point_of_sale import pos_session as \
+from odoo.addons.point_of_sale.point_of_sale import pos_session as \
     std_pos_session
-from openerp.osv import orm
-from openerp.tools.translate import _
+from odoo.osv import orm
+from odoo.tools.translate import _
 
 if not hasattr(std_pos_session, '_prepare_bank_statement'):
     # monkey patch to fix lp:1245375

@@ -18,8 +18,8 @@
 #
 ##############################################################################
 from decimal import Decimal
-from openerp import models, api
-from openerp.tools.float_utils import float_repr
+from odoo import models, api
+from odoo.tools.float_utils import float_repr
 
 
 class AccountBankStatementLine(models.Model):

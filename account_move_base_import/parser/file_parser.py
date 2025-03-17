@@ -4,8 +4,8 @@
 # © 2013 Savoir-faire Linux
 # © 2014 ACSONE SA/NV
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-from openerp.tools.translate import _
-from openerp.exceptions import UserError
+from odoo.tools.translate import _
+from odoo.exceptions import UserError
 import tempfile
 import datetime
 import logging

@@ -20,7 +20,7 @@
 ###############################################################################
 """Wizard to Cancel a Statement."""
 
-from openerp.osv import orm, fields
+from odoo.osv import orm, fields
 
 
 class wizard_cancel_statement(orm.TransientModel):

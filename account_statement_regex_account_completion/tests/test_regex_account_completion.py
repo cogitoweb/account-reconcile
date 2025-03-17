@@ -27,7 +27,7 @@
 #
 ##############################################################################
 
-from openerp.tests import common
+from odoo.tests import common
 import time
 
 ACC_NUMBER = "BE38733040385372"

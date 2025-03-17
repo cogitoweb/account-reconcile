@@ -28,8 +28,8 @@
 ##############################################################################
 
 
-from openerp.osv.orm import Model
-from openerp.osv import fields
+from odoo.osv.orm import Model
+from odoo.osv import fields
 
 import re
 

@@ -2,8 +2,8 @@
 # © 2013 ACSONE SA/NV
 # © 2016 Camptocamp SA
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
-from openerp import _, fields, models
-from openerp.addons.account_move_base_import.models.account_move \
+from odoo import _, fields, models
+from odoo.addons.account_move_base_import.models.account_move \
     import ErrorTooManyPartner
 
 

@@ -6,7 +6,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 import base64
 import csv
-from openerp import _, fields
+from odoo import _, fields
 
 
 def UnicodeDictReader(utf8_data, **kwargs):
