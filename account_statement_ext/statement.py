@@ -18,7 +18,7 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 ##############################################################################
-import openerp.addons.account.account_bank_statement as stat_mod
+from odoo.addons.account.account_bank_statement as stat_mod
 from odoo.osv import fields, orm, osv
 from odoo.tools.translate import _
 
